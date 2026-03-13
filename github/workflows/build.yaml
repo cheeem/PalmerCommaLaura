@@ -1,3 +1,0 @@
-.steps
-  - name: reroute 404
-    run: cp index.html 404.html
