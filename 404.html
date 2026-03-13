@@ -15,14 +15,60 @@
     <aside>
         <ul>
             <li>
-                <a href="#shows"><img src="" alt="">shows<span></span></a>
+                <a href="#announcements"><img src="" alt="">laura has something to say<span></span></a>
             </li>
             <li>
-                <a href="#practice"><img src="" alt="">practice<span></span></a>
+                <a href="#shows"><img src="" alt="">see laura<span></span></a>
+            </li>
+            <li>
+                <a href="#contact"><img src="" alt="">say hi to laura<span></span></a>
+            </li>
+            <li>
+                <a href="#archive"><img src="" alt="">laura archive<span></span></a>
             </li>
         </ul>
     </aside>
-    <main></main>
+    <main>
+        <section id="announcements">
+            <p>welcome to palmer comma laura.<img src="" alt=""/> enjoy your stay. please.</p>
+            <p>demo ep <span class="semibold">eventually..</span> stay tuned friends.</p>
+        </section>
+        <section id="shows">
+            <p>oh hello laura is playing shows at these times.</p>
+            <!-- sorting..? -->
+            <ul>
+                <li class="show">
+                    <ul class="details">
+                        <li class="semibold">mar. 20, 2026</li>
+                        <li class="semibold">seward cafe</li>
+                        <li>doors 6:00pm</li>
+                        <li>noise 7:00pm</li>
+                        <li>$5 notaflof</li>
+                    </ul>
+                    <p class="bill">feat. the likes of lovescare, band 2, band 3, and you won't believe it but also band 4.</p>
+                </li>
+                <li class="show">
+                    <ul class="details">
+                        <li class="semibold">mar. 20, 2026</li>
+                        <li class="semibold">seward cafe</li>
+                        <li>doors 6:00pm</li>
+                        <li>noise 7:00pm</li>
+                        <li>$5 notaflof</li>
+                    </ul>
+                    <p class="bill">feat. the likes of lovescare, band 2, band 3, and you won't believe it but also band 4.</p>
+                </li>
+            </ul>
+            <p>moreover.<img src="" alt=""/> she has also previously been seen in these places.</p>
+            <ul></ul>
+        </section>
+        <section id="contact">
+            <!-- add email copy button with icon -->
+            <p>laura nation we needs your sweet nothings whispered oh-so delicately to <span class="semibold">palmercommalaura@gmail.com.</span></p>
+        </section>
+        <section id="archive">
+            <p>we collect lauras by the dozen. see below.</p>
+        </section>
+    </main>
 </body>
 </html>
 
@@ -39,11 +85,24 @@
         font-family: monospace;
     }
 
-    aside {
-        padding: 2em;
+    :root {
+        --padding-v: 2em;
+        --padding-h: 2em;
     }
 
-    ul {
+    body {
+        display: flex;
+    }
+
+    aside {
+        align-self: start;
+        position: sticky;
+        top: 0;
+
+        padding: var(--padding-v) var(--padding-h);
+    }
+
+    aside ul {
         display: grid;
         gap: 0.3em;
     }
@@ -82,6 +141,43 @@
         50% {
             border-color: transparent;
         }
+    }
+
+    .bold {
+        font-weight: 800;
+    }
+
+    .semibold {
+        font-weight: 600;
+    }
+
+    section {
+        display: grid;
+        grid-auto-rows: auto 1fr;
+        gap: 1em;
+
+        padding: var(--padding-v) var(--padding-h);
+        min-height: 25vh;
+    }
+
+    section:nth-child(2n) {
+        background-color: hsl(0, 0%, 94%);
+    }
+
+    section > ul {
+        display: grid;
+        gap: 1em;
+    }
+
+    .show > ul {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 2em;
+        row-gap: 0;
+    }
+
+    .show li {
+        text-wrap: nowrap;
     }
 
 </style>
