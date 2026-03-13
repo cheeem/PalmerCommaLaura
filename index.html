@@ -1,3 +1,7 @@
+<!-- 
+    TODO: 
+        - client side routing in js
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,16 @@
 <!-- <a href="..." target="_blank" rel="noopener noreferrer"> <img src="..." alt="..." /> <h3>...</h3> </a> -->
 <!-- loading="lazy" -->
 <body>
-    <aside></aside>
+    <aside>
+        <ul>
+            <li>
+                <a href="#shows"><img src="" alt="">shows<span></span></a>
+            </li>
+            <li>
+                <a href="#practice"><img src="" alt="">practice<span></span></a>
+            </li>
+        </ul>
+    </aside>
     <main></main>
 </body>
 </html>
@@ -23,8 +36,52 @@
         list-style: none;
         text-decoration: none;
 
-        font-family: monospace; /* default font */
-        color: black; /* default text color */
+        font-family: monospace;
+    }
+
+    aside {
+        padding: 2em;
+    }
+
+    ul {
+        display: grid;
+        gap: 0.3em;
+    }
+
+    a span {
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: bottom;
+        width: 3em;
+    }
+
+    a span::after {
+        display: inline-block;
+
+        content: "...";
+        white-space: nowrap;
+        
+        border-right: 0.7em solid transparent;
+
+        transform: translateX(calc(-100% + 0.7em));
+        transform-origin: left;
+
+        transition: transform 0.75s steps(3);
+    }
+
+    a:hover span::after {
+        transform: translateX(0%);
+        transition-duration: 2.25s;
+        animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+        from, to {
+            border-color: black;
+        }
+        50% {
+            border-color: transparent;
+        }
     }
 
 </style>
